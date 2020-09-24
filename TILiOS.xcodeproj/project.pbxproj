@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142AA346251D008F004A133E /* ResourceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AA345251D008F004A133E /* ResourceRequest.swift */; };
 		2323AF7324B8B82100D2E1B6 /* ResourceRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2323AF7224B8B82100D2E1B6 /* ResourceRequestError.swift */; };
 		2323AF7724BDF52600D2E1B6 /* CreateAcronymData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2323AF7624BDF52600D2E1B6 /* CreateAcronymData.swift */; };
 		2323AF7924BDF57700D2E1B6 /* AddToCategoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2323AF7824BDF57700D2E1B6 /* AddToCategoryError.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		142AA345251D008F004A133E /* ResourceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRequest.swift; sourceTree = "<group>"; };
 		2323AF7224B8B82100D2E1B6 /* ResourceRequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceRequestError.swift; sourceTree = "<group>"; };
 		2323AF7624BDF52600D2E1B6 /* CreateAcronymData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAcronymData.swift; sourceTree = "<group>"; };
 		2323AF7824BDF57700D2E1B6 /* AddToCategoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCategoryError.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				2323AF7224B8B82100D2E1B6 /* ResourceRequestError.swift */,
+				142AA345251D008F004A133E /* ResourceRequest.swift */,
 				23FBBD9020669DAD00DBFA59 /* ErrorPresenter.swift */,
 				2323AF7824BDF57700D2E1B6 /* AddToCategoryError.swift */,
 			);
@@ -134,11 +137,11 @@
 		D2A5F2021F4A9144005CD714 /* TILiOS */ = {
 			isa = PBXGroup;
 			children = (
+				23FBBF742066C7E400DBFA59 /* Project Files */,
 				D2A5F2071F4A9144005CD714 /* Main.storyboard */,
 				23FBBD8E20669D8A00DBFA59 /* ViewControllers */,
 				23FBBD8720669D1000DBFA59 /* Models */,
 				23FBBD8F20669D9A00DBFA59 /* Utilities */,
-				23FBBF742066C7E400DBFA59 /* Project Files */,
 			);
 			path = TILiOS;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				2323AF7724BDF52600D2E1B6 /* CreateAcronymData.swift in Sources */,
 				23FBBD9B2066AFAE00DBFA59 /* SelectUserTableViewController.swift in Sources */,
 				2323AF7324B8B82100D2E1B6 /* ResourceRequestError.swift in Sources */,
+				142AA346251D008F004A133E /* ResourceRequest.swift in Sources */,
 				23FBBD842066980600DBFA59 /* UsersTableViewController.swift in Sources */,
 				23FBBD862066982500DBFA59 /* CategoriesTableViewController.swift in Sources */,
 				23FBBD8D20669D4F00DBFA59 /* Category.swift in Sources */,
