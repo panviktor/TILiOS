@@ -25,6 +25,7 @@
 		23FBBD992066AE8F00DBFA59 /* CreateAcronymTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBBD982066AE8F00DBFA59 /* CreateAcronymTableViewController.swift */; };
 		23FBBD9B2066AFAE00DBFA59 /* SelectUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBBD9A2066AFAE00DBFA59 /* SelectUserTableViewController.swift */; };
 		5C2901831F8F6DE700803663 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2901821F8F6DE700803663 /* LaunchScreen.storyboard */; };
+		77E98684252088AD009A5DB7 /* AcronymRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E98683252088AD009A5DB7 /* AcronymRequest.swift */; };
 		D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F2071F4A9144005CD714 /* Main.storyboard */; };
 		D2A5F20B1F4A9144005CD714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F20A1F4A9144005CD714 /* Assets.xcassets */; };
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 		23FBBD982066AE8F00DBFA59 /* CreateAcronymTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAcronymTableViewController.swift; sourceTree = "<group>"; };
 		23FBBD9A2066AFAE00DBFA59 /* SelectUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserTableViewController.swift; sourceTree = "<group>"; };
 		5C2901821F8F6DE700803663 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		77E98683252088AD009A5DB7 /* AcronymRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymRequest.swift; sourceTree = "<group>"; };
 		D2A5F2001F4A9144005CD714 /* TILiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TILiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A5F2081F4A9144005CD714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2A5F20A1F4A9144005CD714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,10 +99,11 @@
 		23FBBD8F20669D9A00DBFA59 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2323AF7224B8B82100D2E1B6 /* ResourceRequestError.swift */,
-				142AA345251D008F004A133E /* ResourceRequest.swift */,
-				23FBBD9020669DAD00DBFA59 /* ErrorPresenter.swift */,
 				2323AF7824BDF57700D2E1B6 /* AddToCategoryError.swift */,
+				23FBBD9020669DAD00DBFA59 /* ErrorPresenter.swift */,
+				142AA345251D008F004A133E /* ResourceRequest.swift */,
+				2323AF7224B8B82100D2E1B6 /* ResourceRequestError.swift */,
+				77E98683252088AD009A5DB7 /* AcronymRequest.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				2323AF7324B8B82100D2E1B6 /* ResourceRequestError.swift in Sources */,
 				142AA346251D008F004A133E /* ResourceRequest.swift in Sources */,
 				23FBBD842066980600DBFA59 /* UsersTableViewController.swift in Sources */,
+				77E98684252088AD009A5DB7 /* AcronymRequest.swift in Sources */,
 				23FBBD862066982500DBFA59 /* CategoriesTableViewController.swift in Sources */,
 				23FBBD8D20669D4F00DBFA59 /* Category.swift in Sources */,
 				23FBBD972066ADCB00DBFA59 /* AcronymsDetailTableViewController.swift in Sources */,
@@ -395,10 +399,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PFT2629W4Z;
 				INFOPLIST_FILE = "$(SRCROOT)/TILiOS/Project Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.TILiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftViktor.TILiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -410,10 +414,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PFT2629W4Z;
 				INFOPLIST_FILE = "$(SRCROOT)/TILiOS/Project Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.TILiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftViktor.TILiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
