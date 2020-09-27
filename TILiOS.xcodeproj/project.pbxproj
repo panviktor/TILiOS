@@ -81,15 +81,15 @@
 		23FBBD8E20669D8A00DBFA59 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				23FBBD962066ADCB00DBFA59 /* AcronymsDetailTableViewController.swift */,
 				233638922062B99A001588B0 /* AcronymsTableViewController.swift */,
-				23FBBD832066980600DBFA59 /* UsersTableViewController.swift */,
+				236A123E207BFBC400931AD3 /* AddToCategoryTableViewController.swift */,
 				23FBBD852066982500DBFA59 /* CategoriesTableViewController.swift */,
+				23FBBD982066AE8F00DBFA59 /* CreateAcronymTableViewController.swift */,
 				23FBBD922066A67000DBFA59 /* CreateCategoryTableViewController.swift */,
 				23FBBD942066A67B00DBFA59 /* CreateUserTableViewController.swift */,
-				23FBBD962066ADCB00DBFA59 /* AcronymsDetailTableViewController.swift */,
-				23FBBD982066AE8F00DBFA59 /* CreateAcronymTableViewController.swift */,
 				23FBBD9A2066AFAE00DBFA59 /* SelectUserTableViewController.swift */,
-				236A123E207BFBC400931AD3 /* AddToCategoryTableViewController.swift */,
+				23FBBD832066980600DBFA59 /* UsersTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -137,11 +137,11 @@
 		D2A5F2021F4A9144005CD714 /* TILiOS */ = {
 			isa = PBXGroup;
 			children = (
-				23FBBF742066C7E400DBFA59 /* Project Files */,
 				D2A5F2071F4A9144005CD714 /* Main.storyboard */,
-				23FBBD8E20669D8A00DBFA59 /* ViewControllers */,
 				23FBBD8720669D1000DBFA59 /* Models */,
+				23FBBF742066C7E400DBFA59 /* Project Files */,
 				23FBBD8F20669D9A00DBFA59 /* Utilities */,
+				23FBBD8E20669D8A00DBFA59 /* ViewControllers */,
 			);
 			path = TILiOS;
 			sourceTree = "<group>";
