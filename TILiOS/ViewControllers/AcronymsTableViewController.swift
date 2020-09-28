@@ -28,14 +28,16 @@ class AcronymsTableViewController: UITableViewController {
   
   // MARK: - IBActions
   @IBAction func refresh(_ sender: UIRefreshControl?) {
-    acronymsRequest.getAll { [weak self]  acronymResult in
+    acronymsRequest.getAll { [weak self] acronymResult in
       DispatchQueue.main.async {
         sender?.endRefreshing()
       }
       
       switch acronymResult {
       case .failure:
-        ErrorPresenter.showError(message: "There was an error getting the acronyms", on: self)
+        ErrorPresenter.showError(
+          message: "There was an error getting the acronyms",
+          on: self)
       case .success(let acronyms):
         DispatchQueue.main.async { [weak self] in
           guard let self = self else { return }
@@ -60,5 +62,18 @@ extension AcronymsTableViewController {
     cell.detailTextLabel?.text = acronym.long
     return cell
   }
+  
+  override func tableView(
+    _ tableView: UITableView,
+    commit editingStyle: UITableViewCell.EditingStyle,
+    forRowAt indexPath: IndexPath
+  ) {
+    if let id = acronyms[indexPath.row].id {
+      let acronymDetailRequester = AcronymRequest(acronymID: id)
+      acronymDetailRequester.delete()
+    }
+    
+    acronyms.remove(at: indexPath.row)
+    tableView.deleteRows(at: [indexPath], with: .automatic)
+  }
 }
-

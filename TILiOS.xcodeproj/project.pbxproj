@@ -73,9 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				23FBBD8820669D1B00DBFA59 /* Acronym.swift */,
-				23FBBD8A20669D3300DBFA59 /* User.swift */,
 				23FBBD8C20669D4F00DBFA59 /* Category.swift */,
 				2323AF7624BDF52600D2E1B6 /* CreateAcronymData.swift */,
+				23FBBD8A20669D3300DBFA59 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,11 +99,11 @@
 		23FBBD8F20669D9A00DBFA59 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				77E98683252088AD009A5DB7 /* AcronymRequest.swift */,
 				2323AF7824BDF57700D2E1B6 /* AddToCategoryError.swift */,
 				23FBBD9020669DAD00DBFA59 /* ErrorPresenter.swift */,
 				142AA345251D008F004A133E /* ResourceRequest.swift */,
 				2323AF7224B8B82100D2E1B6 /* ResourceRequestError.swift */,
-				77E98683252088AD009A5DB7 /* AcronymRequest.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";

@@ -1,31 +1,3 @@
-/// Copyright (c) 2019 Razeware LLC
-/// 
-/// Permission is hereby granted, free of charge, to any person obtaining a copy
-/// of this software and associated documentation files (the "Software"), to deal
-/// in the Software without restriction, including without limitation the rights
-/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-/// copies of the Software, and to permit persons to whom the Software is
-/// furnished to do so, subject to the following conditions:
-/// 
-/// The above copyright notice and this permission notice shall be included in
-/// all copies or substantial portions of the Software.
-/// 
-/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
-/// distribute, sublicense, create a derivative work, and/or sell copies of the
-/// Software in any work that is designed, intended, or marketed for pedagogical or
-/// instructional purposes related to programming, coding, application development,
-/// or information technology.  Permission for such use, copying, modification,
-/// merger, publication, distribution, sublicensing, creation of derivative works,
-/// or sale is expressly withheld.
-/// 
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-/// THE SOFTWARE.
-
 import UIKit
 
 class AcronymDetailTableViewController: UITableViewController {
@@ -77,27 +49,29 @@ class AcronymDetailTableViewController: UITableViewController {
     guard let id = acronym.id else {
       return
     }
-
+    
     let acronymDetailRequester = AcronymRequest(acronymID: id)
     acronymDetailRequester.getUser { [weak self] result in
       switch result {
       case .success(let user):
         self?.user = user
       case .failure:
-        let message = "There was an error getting the acronym’s user"
+        let message =
+          "There was an error getting the acronym’s user"
         ErrorPresenter.showError(message: message, on: self)
       }
     }
+    
     acronymDetailRequester.getCategories { [weak self] result in
       switch result {
       case .success(let categories):
         self?.categories = categories
       case .failure:
-        let message = "There was an error getting the acronym’s categories"
+        let message =
+          "There was an error getting the acronym’s categories"
         ErrorPresenter.showError(message: message, on: self)
       }
     }
-    
   }
   
   func updateAcronymView() {
@@ -108,22 +82,39 @@ class AcronymDetailTableViewController: UITableViewController {
   
   // MARK: - Navigation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "EditAcronymSegue" {
+      guard let destination = segue.destination as? CreateAcronymTableViewController else {
+        return
+      }
+      
+      destination.selectedUser = user
+      destination.acronym = acronym
+    }
   }
   
   @IBSegueAction func makeAddToCategoryController(_ coder: NSCoder) -> AddToCategoryTableViewController? {
-    return nil
+    AddToCategoryTableViewController(coder: coder, acronym: acronym, selectedCategories: categories)
   }
   
   
   // MARK: - IBActions
   @IBAction func updateAcronymDetails(_ segue: UIStoryboardSegue) {
+    guard let controller = segue.source
+            as? CreateAcronymTableViewController else {
+      return
+    }
+    
+    user = controller.selectedUser
+    if let acronym = controller.acronym {
+      self.acronym = acronym
+    }
   }
 }
 
 // MARK: - UITableViewDataSource
 extension AcronymDetailTableViewController {
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return 4
+    return 5
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -141,8 +132,17 @@ extension AcronymDetailTableViewController {
       cell.textLabel?.text = user?.name
     case 3:
       cell.textLabel?.text = categories[indexPath.row].name
+    case 4:
+      cell.textLabel?.text = "Add To Category"
     default:
       break
+    }
+    if indexPath.section == 4 {
+      cell.selectionStyle = .default
+      cell.isUserInteractionEnabled = true
+    } else {
+      cell.selectionStyle = .none
+      cell.isUserInteractionEnabled = false
     }
     return cell
   }
